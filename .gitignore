@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+Backend/venv/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables (keep .env.example only)
+.env
+.env.local
+.env.production
+frontend/.env
+frontend/.env.local
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build output
+dist/
+build/
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large dataset (optional - comment out if you want dataset in repo)
+# Backend/data/Loan_default.csv

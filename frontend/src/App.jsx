@@ -8,6 +8,9 @@ import Home from "./pages/Home";
 import Prediction from "./pages/Prediction";
 import Result from "./pages/Result";
 import ModelInfo from "./pages/ModelInfo";
+import EdaDashboard from "./pages/EdaDashboard";
+import ErrorAnalysis from "./pages/ErrorAnalysis";
+import AboutProject from "./pages/AboutProject";
 import CyberBackground from "./components/CyberBackground";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -15,7 +18,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        {/* Dynamic, High-Speed Animated Neural & Cyber Background with Theme support */}
+        {/* Dynamic Animated Neural & Cyber Background with Theme support */}
         <CyberBackground />
 
         <div className="relative z-10 min-h-screen">
@@ -38,6 +41,21 @@ const App = () => {
             <Route
               path="/model"
               element={<ModelInfo />}
+            />
+
+            <Route
+              path="/eda"
+              element={<EdaDashboard />}
+            />
+
+            <Route
+              path="/error-analysis"
+              element={<ErrorAnalysis />}
+            />
+
+            <Route
+              path="/about"
+              element={<AboutProject />}
             />
           </Routes>
         </div>

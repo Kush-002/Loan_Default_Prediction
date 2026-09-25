@@ -1,0 +1,14 @@
+{
+  "name": "loan-default-prediction-root",
+  "version": "2.4.0",
+  "private": true,
+  "description": "Unified runner for Loan Default Prediction ML Project",
+  "scripts": {
+    "start": "python run.py",
+    "dev": "python run.py",
+    "backend": "cd Backend && python app.py",
+    "frontend": "cd frontend && npm run dev",
+    "train": "python src/train_and_evaluate.py",
+    "pipeline": "python src/data_pipeline.py"
+  }
+}

@@ -15,7 +15,10 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://loan-default-prediction-2vzx.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+    ? "http://127.0.0.1:5000"
+    : "https://loan-default-prediction-2vzx.onrender.com");
 
 const Prediction = () => {
   const navigate = useNavigate();

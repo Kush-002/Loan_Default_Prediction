@@ -79,7 +79,7 @@ const Navbar = () => {
             to="/"
             end
             className={({ isActive }) =>
-              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
                 isActive
                   ? isDark
                     ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
@@ -91,13 +91,13 @@ const Navbar = () => {
             }
           >
             <Sparkles size={13} className={isDark ? "text-emerald-400" : "text-emerald-600"} />
-            <span>Home</span>
+            <span>Dashboard</span>
           </NavLink>
 
           <NavLink
             to="/prediction"
             className={({ isActive }) =>
-              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
                 isActive
                   ? isDark
                     ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
@@ -113,9 +113,27 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to="/eda"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+                isActive
+                  ? isDark
+                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
+                    : "bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs font-bold"
+                  : isDark
+                    ? "text-slate-400 hover:text-white hover:bg-white/5"
+                    : "text-slate-600 hover:text-emerald-900 hover:bg-emerald-50/50"
+              }`
+            }
+          >
+            <Activity size={13} className={isDark ? "text-emerald-400" : "text-emerald-600"} />
+            <span>EDA Analytics</span>
+          </NavLink>
+
+          <NavLink
             to="/model"
             className={({ isActive }) =>
-              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
                 isActive
                   ? isDark
                     ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
@@ -127,7 +145,42 @@ const Navbar = () => {
             }
           >
             <Brain size={13} className={isDark ? "text-teal-300" : "text-emerald-600"} />
-            <span>Model Telemetry</span>
+            <span>Models & CV</span>
+          </NavLink>
+
+          <NavLink
+            to="/error-analysis"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+                isActive
+                  ? isDark
+                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
+                    : "bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs font-bold"
+                  : isDark
+                    ? "text-slate-400 hover:text-white hover:bg-white/5"
+                    : "text-slate-600 hover:text-emerald-900 hover:bg-emerald-50/50"
+              }`
+            }
+          >
+            <ShieldCheck size={13} className={isDark ? "text-amber-400" : "text-amber-600"} />
+            <span>Error Analysis</span>
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 ${
+                isActive
+                  ? isDark
+                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)] font-bold"
+                    : "bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-xs font-bold"
+                  : isDark
+                    ? "text-slate-400 hover:text-white hover:bg-white/5"
+                    : "text-slate-600 hover:text-emerald-900 hover:bg-emerald-50/50"
+              }`
+            }
+          >
+            <span className="text-[11px] font-mono">Viva Guide</span>
           </NavLink>
         </div>
 
