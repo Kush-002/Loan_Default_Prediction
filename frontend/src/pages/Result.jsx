@@ -122,7 +122,7 @@ const Result = () => {
                   : "bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/30 text-red-800 dark:text-red-300"
               }`}>
                 <CheckCircle2 size={13} className="animate-pulse" />
-                <span>REAL MODEL INFERENCE COMPLETE • FLASK API 5000</span>
+                <span>REAL MODEL INFERENCE COMPLETE • LIVE CLOUD API</span>
               </div>
 
               <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white">

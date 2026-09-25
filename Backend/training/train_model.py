@@ -30,7 +30,6 @@ if "LoanID" in df.columns:
 # ==========================================
 
 X = df.drop("Default", axis=1)
-
 y = df["Default"]
 
 
@@ -50,15 +49,11 @@ categorical_columns = [
 
 encoders = {}
 
-
 for column in categorical_columns:
-
     encoder = LabelEncoder()
-
     X[column] = encoder.fit_transform(
         X[column].astype(str)
     )
-
     encoders[column] = encoder
 
 
@@ -67,7 +62,6 @@ for column in categorical_columns:
 # ==========================================
 
 scaler = StandardScaler()
-
 X_scaled = scaler.fit_transform(X)
 
 
@@ -89,13 +83,14 @@ X_train, X_test, y_train, y_test = train_test_split(
 # ==========================================
 
 model = RandomForestClassifier(
-    n_estimators=20,
-    max_depth=15,
-    min_samples_leaf=2,
+    n_estimators=10,
+    max_depth=8,
+    min_samples_leaf=5,
     random_state=42,
     class_weight="balanced",
     n_jobs=-1
 )
+
 
 # ==========================================
 # TRAIN
@@ -139,24 +134,26 @@ print(
 
 joblib.dump(
     model,
-    "model/model.pkl"
+    "model/model.pkl",
+    compress=3
 )
 
 joblib.dump(
     scaler,
-    "model/scaler.pkl"
+    "model/scaler.pkl",
+    compress=3
 )
 
 joblib.dump(
     encoders,
-    "model/encoders.pkl"
+    "model/encoders.pkl",
+    compress=3
 )
 
 
 print("\n================================")
 print("MODEL TRAINING COMPLETED")
 print("================================")
-
 print("model.pkl saved")
 print("scaler.pkl saved")
 print("encoders.pkl saved")

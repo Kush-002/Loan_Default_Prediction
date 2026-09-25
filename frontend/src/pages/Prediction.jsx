@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://loan-default-prediction-2vzx.onrender.com";
 
 const Prediction = () => {
   const navigate = useNavigate();
@@ -123,7 +124,7 @@ const Prediction = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/predict", {
+      const response = await fetch(`${API_BASE_URL}/api/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -165,7 +166,7 @@ const Prediction = () => {
 
       if (isConnectionError) {
         setErrorMessage(
-          "Error 500 / Connection Failed: Backend server is offline! Cannot reach http://127.0.0.1:5000. Start Flask backend by running 'python app.py' in the Backend folder."
+          `Connection Failed: Cannot reach live backend at ${API_BASE_URL}. If the instance was asleep, please retry in a few seconds.`
         );
       } else {
         setErrorMessage(error.message);
@@ -698,10 +699,10 @@ const Prediction = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <strong className="text-xs font-mono font-bold uppercase tracking-wider text-red-900 dark:text-red-200">
-                          Backend Connection Failed
+                          Backend Connection Error
                         </strong>
                         <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-400 font-semibold">
-                          PORT 5000 UNREACHABLE
+                          CLOUD API STATUS
                         </span>
                       </div>
                       <p className="text-xs mt-1.5 leading-relaxed text-slate-700 dark:text-slate-300">
@@ -709,10 +710,10 @@ const Prediction = () => {
                       </p>
                       <div className="mt-3.5 flex flex-wrap items-center gap-3 pt-3 border-t border-red-200 dark:border-red-500/20">
                         <span className="text-xs font-semibold text-slate-600 dark:text-slate-400">
-                          Start server:
+                          Live Endpoint:
                         </span>
                         <code className="text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-slate-900 text-emerald-300 dark:bg-black dark:text-emerald-400 border border-slate-700 select-all">
-                          cd Backend ; python app.py
+                          {API_BASE_URL}
                         </code>
                       </div>
                     </div>
